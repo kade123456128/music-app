@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#202020" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <title>MAR — Make music. Meet your band.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pages.css" />
+    <link rel="stylesheet" href="call-interface.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#"><span class="brand-dot"></span>mar<span class="brand-mark">/</span></a>
+        <nav>
+          <button class="nav-item active" data-page="home"><span>⌂</span> Home</button>
+          <button class="nav-item" data-page="discover"><span>◉</span> Discover</button>
+          <button class="nav-item" data-page="bands"><span>♬</span> Band requests</button>
+          <button class="nav-item" data-page="messages"><span>◌</span> Messages <b>3</b></button>
+        </nav>
+        <button class="create-button" id="createSong">＋ Create a song</button>
+        <div class="sidebar-bottom">
+          <button class="nav-item"><span>⚙</span> Settings</button>
+          <button class="user-card"><span class="avatar small purple">M</span><span><strong>Maya Reed</strong><em>View profile</em></span><i>•••</i></button>
+        </div>
+      </aside>
+
+      <main>
+        <header class="mobile-header"><a class="brand" href="#"><span class="brand-dot"></span>mar<span class="brand-mark">/</span></a><button aria-label="menu">☰</button></header>
+        <section class="hero">
+          <p class="eyebrow">YOUR SPACE TO CREATE</p>
+          <h1>Make noise.<br /><em>Find your people.</em></h1>
+          <p class="hero-copy">Share the music in your head, discover artists who move you, and build the band you have been looking for.</p>
+          <div class="hero-actions"><button class="primary" id="startCreating">Start creating <span>→</span></button><button class="text-button">Explore MAR</button></div>
+          <div class="orb orb-one"></div><div class="orb orb-two"></div><div class="orb orb-three"></div>
+        </section>
+
+        <section class="content-section">
+          <div class="section-heading"><div><p class="eyebrow">FOR YOU</p><h2>Fresh sounds</h2></div><button class="see-all">See all <span>→</span></button></div>
+          <div class="tracks">
+            <article class="track-card coral"><div class="cover cover-one"><span>◔</span></div><div class="track-info"><button class="play" aria-label="play">▶</button><div><h3>Afterglow</h3><p>Nova June <span>•</span> Indie pop</p></div><button class="more">•••</button></div></article>
+            <article class="track-card blue"><div class="cover cover-two"><span>◒</span></div><div class="track-info"><button class="play" aria-label="play">▶</button><div><h3>Hollow Hours</h3><p>Sunday Driver <span>•</span> Alt rock</p></div><button class="more">•••</button></div></article>
+            <article class="track-card yellow"><div class="cover cover-three"><span>✦</span></div><div class="track-info"><button class="play" aria-label="play">▶</button><div><h3>Soft Focus</h3><p>Lo &amp; Behold <span>•</span> Electronic</p></div><button class="more">•••</button></div></article>
+          </div>
+        </section>
+
+        <section class="content-section requests-section">
+          <div class="section-heading"><div><p class="eyebrow">COLLABORATE</p><h2>Band requests near you</h2></div><button class="see-all">See all <span>→</span></button></div>
+          <div class="requests">
+            <article class="request-card"><div class="request-top"><span class="avatar orange">J</span><div><h3>Juniper Vale</h3><p>London, UK · 3 miles away</p></div><span class="genre">INDIE ROCK</span></div><h4>Looking for a drummer</h4><p class="request-text">We are building something loud, warm and a little messy. Influences: Wolf Alice, Big Thief, The Smile.</p><div class="request-footer"><span><b>2</b> members so far</span><button class="join">I’m interested <span>→</span></button></div></article>
+            <article class="request-card"><div class="request-top"><span class="avatar mint">A</span><div><h3>Alex Kim</h3><p>London, UK · 5 miles away</p></div><span class="genre violet">R&amp;B / SOUL</span></div><h4>Keys player wanted</h4><p class="request-text">Seeking someone who loves rich chords and late-night sessions. Demos ready.</p><div class="request-footer"><span><b>3</b> members so far</span><button class="join">I’m interested <span>→</span></button></div></article>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="modal" id="modal" aria-hidden="true"><div class="modal-card"><button class="close" id="closeModal">×</button><p class="eyebrow">NEW SONG</p><h2>What are you making?</h2><input placeholder="Give your song a title" autofocus /><div class="record-row"><button class="record">●</button><span>Tap to start recording</span></div><button class="primary full">Create song <span>→</span></button></div></div>
+    <div class="video-call" id="videoCall"><div class="call-room"><div class="call-header"><strong>MAR band room</strong><span>● Live</span></div><video id="camera" autoplay muted playsinline></video><div class="call-controls"><button title="Microphone">🎙</button><button title="Camera">◉</button><button class="end" id="endCall">☎</button></div></div></div>
+    <div class="modal" id="bandModal"><div class="modal-card band-dialog"><button class="close" id="closeBand">×</button><p class="eyebrow">NEW BAND</p><h2>Start a band</h2><input id="bandName" placeholder="Band name" /><input placeholder="Your genre, e.g. Indie rock" /><textarea placeholder="Who are you looking for?"></textarea><button class="primary full" id="makeBand">Create band <span>→</span></button></div></div>
+    <nav class="mobile-nav"><button class="active">⌂<span>Home</span></button><button>◉<span>Discover</span></button><button>♬<span>Bands</span></button><button>◌<span>Inbox</span></button></nav>
+    <script src="app.js"></script>
+  </body>
+</html>
