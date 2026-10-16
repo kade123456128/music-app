@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101321" />
+  <title>Echo — Bluetooth, made human</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="auth-screen" id="authScreen">
+    <div class="auth-card">
+      <div class="wordmark"><i></i>echo</div>
+      <p class="auth-eyebrow">WELCOME TO ECHO</p>
+      <h1>Connect with<br><em>your world.</em></h1>
+      <p class="auth-copy">Create your profile with your email. No password needed.</p>
+      <form id="emailForm"><label for="email">Email address</label><input id="email" type="email" autocomplete="email" placeholder="you@email.com" required /><button>Continue with email <span>→</span></button></form>
+      <p class="auth-note">No password and no verification email. Your email is used only as your Echo profile name.</p>
+    </div>
+  </section>
+  <main class="phone">
+    <header><div class="wordmark"><i></i>echo</div><button class="profile">K</button></header>
+    <section class="welcome"><p>GOOD EVENING, KADE</p><h1>Everything<br><em>in sync.</em></h1></section>
+    <section class="headphones card" id="headphones">
+      <div class="device-icon">◖<span>◗</span></div>
+      <div><small>YOUR AUDIO</small><h2 id="deviceName">No headphones connected</h2><p id="deviceInfo">Connect from your phone settings</p></div>
+      <button class="connect" id="connectAudio">Connect</button>
+    </section>
+    <section class="section-title"><div><small>NEARBY ON ECHO</small><h2>Say hello</h2></div><button id="refresh">↻</button></section>
+    <section class="people" id="people">
+      <article class="person"><span class="avatar one">J</span><div><h3>Jay</h3><p>12 m away · Open to chat</p></div><button class="talk">Talk</button></article>
+      <article class="person"><span class="avatar two">A</span><div><h3>Amara</h3><p>24 m away · Listening now</p></div><button class="talk">Talk</button></article>
+      <article class="person"><span class="avatar three">M</span><div><h3>Max</h3><p>38 m away · Open to chat</p></div><button class="talk">Talk</button></article>
+    </section>
+    <section class="section-title"><div><small>YOUR DEVICES</small><h2>Quick controls</h2></div><button class="add" id="addDevice">＋</button></section>
+    <section class="controls">
+      <button class="control"><b>◉</b><span>Speaker</span><em>Not connected</em></button>
+      <button class="control"><b>⌁</b><span>Smart lights</span><em>Not connected</em></button>
+      <button class="control"><b>⌕</b><span>Find device</span><em>Nearby scan</em></button>
+    </section>
+    <nav><button class="selected">⌁<span>Home</span></button><button>◉<span>Nearby</span></button><button>◒<span>Devices</span></button><button>◌<span>Profile</span></button></nav>
+  </main>
+  <div class="sheet" id="sheet"><div class="sheet-card"><button class="close">×</button><div class="call-icon">◉</div><small>VOICE REQUEST</small><h2 id="sheetName">Talk with Jay?</h2><p>They will need to accept before the call begins.</p><button class="allow" id="requestCall">Send talk request</button></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
